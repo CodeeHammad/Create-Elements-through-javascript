@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .box1 {
+        height: 100px;
+        width: 100px;
+        background: linear-gradient(red, green);
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <article id="container"></article>
+      <button onclick="creatediv()">click to create divs</button>
+    </section>
+
+    <script>
+      const creatediv = () => {
+        let arr = ["apple", "banana ", "monitor", "computer", "desktop"];
+
+        for (let i = 0; i < 50; i++) {
+          let fruit = document.createElement("div");
+          fruit.className = "box1";
+          fruit.innerHTML = arr[i];
+          document.getElementById("container").appendChild(fruit);
+        }
+      };
+    </script>
+  </body>
+</html>
