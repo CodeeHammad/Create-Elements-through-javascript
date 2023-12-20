@@ -13,7 +13,7 @@
       .box1 {
         height: 100px;
         width: 100px;
-        background: linear-gradient(red, green);
+        background: darkgray;
         margin: 5px;
       }
     </style>
@@ -27,11 +27,18 @@
     <script>
       const creatediv = () => {
         let arr = ["apple", "banana ", "monitor", "computer", "desktop"];
-
+        let newarr = [];
+        for (let j = 0; j < 50; j++) {
+          const index = j % arr.length;
+          newarr.push(arr[index]);
+        }
         for (let i = 0; i < 50; i++) {
+          // let newarr = [];
+          // const index = i % arr.length;
+          // newarr.push(arr[index]);
           let fruit = document.createElement("div");
           fruit.className = "box1";
-          fruit.innerHTML = arr[i];
+          fruit.innerHTML = newarr[i];
           document.getElementById("container").appendChild(fruit);
         }
       };
